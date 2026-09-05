@@ -374,7 +374,6 @@ git push
 
 Planned/possible improvements:
 
--   🔐 JWT authentication and authorization
 -   👤 User accounts and profiles
 -   🧩 API Gateway
 -   🔗 Microservice architecture
