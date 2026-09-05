@@ -1,0 +1,57 @@
+.activity-bar {
+  width: 56px;
+  background: #181818;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  padding-top: 10px;
+
+  border-right: 1px solid #2c2c2c;
+}
+
+.activity-btn {
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 8px;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  border-radius: 8px;
+
+  font-size: 22px;
+}
+
+.activity-btn:hover {
+  background: #2d2d2d;
+}
+
+.activity-btn.active {
+  background: #0e639c;
+}
+.sidebar-panel {
+  width: 300px;
+
+  background: #1e1e1e;
+
+  color: white;
+
+  border-right: 1px solid #2d2d2d;
+
+  padding: 15px;
+
+  overflow: auto;
+}
+.sidebar-divider {
+  width: 70%;
+  height: 1px;
+  background: #2f3542;
+  margin: 15px auto;
+}

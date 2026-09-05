@@ -1,0 +1,47 @@
+.run-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.run-btn,
+.stop-btn {
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.run-btn {
+  background: #238636;
+  color: white;
+}
+
+.run-btn:hover:not(:disabled) {
+  background: #2ea043;
+}
+
+.stop-btn {
+  background: #da3633;
+  color: white;
+}
+
+.stop-btn:hover:not(:disabled) {
+  background: #f85149;
+}
+
+.run-btn:disabled,
+.stop-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.run-status {
+  color: #b3b3b3;
+  font-size: 14px;
+  min-width: 80px;
+}

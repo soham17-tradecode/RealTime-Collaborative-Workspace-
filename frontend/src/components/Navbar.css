@@ -1,0 +1,290 @@
+/* Navbar.css */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 76px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8, 12, 24, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(120, 140, 255, 0.16);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(89, 130, 255, 0.08),
+    rgba(0, 255, 209, 0.04),
+    rgba(89, 130, 255, 0.08)
+  );
+  pointer-events: none;
+}
+
+.logo {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #f5f7ff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.logo::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5b8cff, #00d4ff);
+  box-shadow: 0 0 16px rgba(91, 140, 255, 0.9);
+}
+
+.auth-buttons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.create-room-btn,
+.Join-room-btn,
+.login-btn,
+.signup-btn,
+.notification,
+.dropdown-item {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.create-room-btn,
+.Join-room-btn {
+  padding: 11px 16px;
+  border-radius: 14px;
+  font-weight: 600;
+  color: #eef2ff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.create-room-btn:hover,
+.Join-room-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(91, 140, 255, 0.16);
+  border-color: rgba(91, 140, 255, 0.35);
+}
+
+.login-btn {
+  padding: 11px 18px;
+  border-radius: 14px;
+  background: transparent;
+  color: #dbe3ff;
+  border: 1px solid rgba(219, 227, 255, 0.18);
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.signup-btn {
+  padding: 11px 18px;
+  border-radius: 14px;
+  color: #06111f;
+  font-weight: 700;
+  background: linear-gradient(135deg, #7aa2ff, #00d4ff);
+  box-shadow: 0 10px 22px rgba(0, 212, 255, 0.2);
+}
+
+.signup-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0, 212, 255, 0.28);
+}
+
+.notification {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  color: #eef2ff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 255, 0.16);
+  display: grid;
+  place-items: center;
+  font-size: 1.05rem;
+}
+
+.notification:hover {
+  transform: translateY(-1px) rotate(6deg);
+  background: rgba(91, 140, 255, 0.14);
+}
+
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px 8px 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 255, 0.16);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.profile-container:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(91, 140, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #09111f;
+  background: linear-gradient(135deg, #7aa2ff, #00d4ff);
+  box-shadow: 0 0 18px rgba(0, 212, 255, 0.18);
+}
+
+.user-name {
+  color: #eef2ff;
+  font-weight: 600;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arrow {
+  color: #9fb0ff;
+  font-size: 0.75rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  min-width: 210px;
+  padding: 10px;
+  border-radius: 18px;
+  background: rgba(10, 14, 28, 0.96);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(148, 163, 255, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.dropdown-user {
+  padding: 10px 12px;
+  color: #f3f6ff;
+  font-weight: 600;
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 8px 0;
+  background: rgba(148, 163, 255, 0.14);
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 12px;
+  text-align: left;
+  color: #dce4ff;
+  background: transparent;
+}
+
+.dropdown-item:hover {
+  background: rgba(91, 140, 255, 0.12);
+}
+
+.logout-item {
+  color: #ffb6c1;
+}
+
+.logout-item:hover {
+  background: rgba(255, 99, 132, 0.12);
+}
+
+.navbar,
+.profile-container,
+.create-room-btn,
+.Join-room-btn,
+.login-btn,
+.signup-btn,
+.notification,
+.dropdown-item {
+  transition: all 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+    height: auto;
+    min-height: 72px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .auth-buttons {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .user-section {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .create-room-btn,
+  .Join-room-btn,
+  .login-btn,
+  .signup-btn {
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.05rem;
+  }
+
+  .create-room-btn,
+  .Join-room-btn {
+    width: 100%;
+  }
+
+  .user-section {
+    gap: 8px;
+  }
+}

@@ -1,0 +1,92 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.create-modal {
+    width: 430px;
+    background: #252526;
+    border: 1px solid #3c3c3c;
+    border-radius: 12px;
+    padding: 28px;
+    color: white;
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+.create-modal h2{
+    margin:0;
+    font-size:28px;
+    font-weight:700;
+}
+
+.modal-subtitle{
+    margin-top:8px;
+    margin-bottom:22px;
+    color:#9ca3af;
+    font-size:14px;
+}
+
+.file-input{
+    width:100%;
+    padding:14px 16px;
+    background:#1e1e1e;
+    border:1px solid #3c3c3c;
+    border-radius:8px;
+    color:white;
+    font-size:15px;
+    outline:none;
+    box-sizing:border-box;
+}
+
+.file-input:focus{
+    border-color:#0e639c;
+    box-shadow:0 0 0 2px rgba(14,99,156,.25);
+}
+
+.modal-actions{
+    margin-top:28px;
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+}
+
+.cancel-btn{
+    background:#2d2d30;
+    color:#d4d4d4;
+    border:none;
+    border-radius:8px;
+    padding:12px 24px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.2s;
+}
+
+.cancel-btn:hover{
+    background:#3c3c3c;
+}
+
+.create-btn{
+    background:#0e639c;
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:12px 24px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.2s;
+}
+
+.create-btn:hover{
+    background:#1177bb;
+}
+
+.create-btn:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}

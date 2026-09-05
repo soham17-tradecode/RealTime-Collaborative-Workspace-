@@ -1,0 +1,396 @@
+/* ===========================
+   CHAT LAYOUT
+=========================== */
+
+.chat-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.chat-header {
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+
+  background: #111827;
+
+  border-bottom: 1px solid #1f2937;
+
+  color: #f8fafc;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+/* ===========================
+   MESSAGE AREA
+=========================== */
+
+.chat-messages {
+  flex: 1;
+
+  overflow-y: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  padding: 24px;
+
+  background: #0f172a;
+}
+
+.message-row {
+  display: flex;
+
+  width: 100%;
+}
+
+.message-row.mine {
+  justify-content: flex-end;
+}
+
+.message-row.other {
+  justify-content: flex-start;
+}
+
+/* ===========================
+   MESSAGE CARD
+=========================== */
+
+.message {
+  max-width: min(70%, 520px);
+
+  min-width: 120px;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  word-break: break-word;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ===========================
+   MY MESSAGE
+=========================== */
+
+.my-message {
+  background: linear-gradient(145deg, #2563eb, #1d4ed8);
+
+  color: white;
+}
+
+.my-message .message-header {
+  padding: 10px 16px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  opacity: 0.85;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.my-message .message-content {
+  padding: 14px 16px;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+/* ===========================
+   OTHER MESSAGE
+=========================== */
+
+.other-message {
+  background: #1f2937;
+}
+
+.other-message .message-header {
+  padding: 10px 16px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #60a5fa;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.other-message .message-content {
+  padding: 14px 16px;
+
+  color: #e5e7eb;
+
+  line-height: 1.6;
+}
+
+/* ===========================
+   INPUT AREA
+=========================== */
+
+.chat-input-container {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 16px 20px;
+
+  background: #111827;
+
+  border-top: 1px solid #1f2937;
+
+  flex-shrink: 0;
+}
+
+.chat-input {
+  flex: 1;
+
+  height: 52px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 14px;
+
+  background: #1f2937;
+
+  color: white;
+
+  padding: 0 18px;
+
+  font-size: 15px;
+
+  transition: 0.25s;
+}
+
+.chat-input:focus {
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.upload-btn,
+.send-btn {
+  height: 52px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+  font-weight: 600;
+}
+
+.upload-btn {
+  width: 52px;
+
+  border-radius: 14px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 22px;
+}
+
+.upload-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+}
+
+.send-btn {
+  padding: 0 26px;
+
+  border-radius: 14px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 15px;
+}
+
+.send-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   FILE CARD
+=========================== */
+
+.file-card {
+  background: #111827;
+
+  border: 1px solid #334155;
+
+  border-radius: 14px;
+
+  padding: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  transition: 0.25s;
+}
+
+.file-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #60a5fa;
+}
+
+.file-icon {
+  font-size: 36px;
+}
+
+.file-name {
+  color: white;
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+.download-btn {
+  border: none;
+
+  background: #22c55e;
+
+  color: white;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.download-btn:hover {
+  background: #16a34a;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #374151;
+
+  border-radius: 20px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1200px) {
+  .message {
+    max-width: 80%;
+  }
+
+  .chat-input-container {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .chat-header {
+    height: 60px;
+
+    font-size: 18px;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .chat-messages {
+    padding: 16px;
+  }
+
+  .chat-input {
+    height: 48px;
+  }
+
+  .upload-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .send-btn {
+    height: 48px;
+  }
+}
+
+@media (max-width: 650px) {
+  .chat-input-container {
+    gap: 8px;
+  }
+
+  .send-btn {
+    padding: 0 18px;
+  }
+}
+.chat-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.chat-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}

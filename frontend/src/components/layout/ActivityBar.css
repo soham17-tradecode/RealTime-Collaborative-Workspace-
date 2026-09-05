@@ -1,0 +1,39 @@
+.activity-bar {
+  width: 58px;
+  background: #181818;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  padding-top: 10px;
+
+  border-right: 1px solid #2b2b2b;
+}
+
+.activity-btn {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  background: none;
+
+  color: white;
+
+  cursor: pointer;
+
+  margin-bottom: 8px;
+
+  border-radius: 8px;
+
+  font-size: 20px;
+}
+
+.activity-btn:hover {
+  background: #2d2d2d;
+}
+
+.activity-btn.active {
+  background: #007acc;
+}

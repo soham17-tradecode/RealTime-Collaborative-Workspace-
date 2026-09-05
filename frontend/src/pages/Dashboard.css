@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+}
+
+.dashboard-container {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #071330 0%,
+        #0f172a 100%
+    );
+
+    padding: 20px;
+}
+
+.dashboard-card {
+
+    width: 100%;
+    max-width: 500px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+
+    animation: fadeIn 0.4s ease;
+}
+
+.dashboard-card h2 {
+
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 25px;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+}
+
+.room-input {
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+.room-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.room-input:focus {
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.create-btn {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.create-btn:hover:not(:disabled) {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+.create-btn:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+.close-btn {
+
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px; 
+
+    border: none;
+    border-radius: 12px;
+
+    background: #374151;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.close-btn:hover {
+    background: #4b5563;
+}
+
+.message {
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: #93c5fd;
+
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* * {
+    box-sizing: border-box;
+}
+
+.dashboard-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #282c34, #1a1d21);
+    padding: 20px;
+}
+
+.dashboard-card {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    animation: fadeIn 0.4s ease;
+}
+
+.dashboard-card h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.room-input {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.room-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.room-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.create-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.create-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+.create-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.close-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px; 
+    border: none;
+    border-radius: 12px;
+    background: #374151;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.close-btn:hover {
+    background: #4b5563;
+}
+
+.message {
+    margin-top: 18px;
+    text-align: center;
+    color: #93c5fd;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+} */
