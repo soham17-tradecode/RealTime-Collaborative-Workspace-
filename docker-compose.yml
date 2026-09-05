@@ -1,0 +1,90 @@
+version: "3.8"
+
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: postgres_db
+
+    restart: always
+    environment:
+      POSTGRES_DB: RealApp
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: P123
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+     - virtual_network
+
+  redis:
+    image: redis:7
+    container_name: redis_server
+    restart: always
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - virtual_network
+
+
+  backend:
+    build: .
+    container_name: spring_app
+    restart: always
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8080:8080"
+    volumes:
+
+      - uploads_data:/app/uploads
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/RealApp
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: P123
+      AI_API_KEY: ${AI_API_KEY}
+
+
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+    networks:
+      - virtual_network
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+networks:
+  virtual_network:
+    driver: bridge
+
+
+volumes:
+  postgres_data:
+  redis_data:
+  uploads_data:
+
+
+
+
+
