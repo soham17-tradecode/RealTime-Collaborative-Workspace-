@@ -111,6 +111,7 @@ function ChatPanel({
         presence={presence}
         user={user}
         leaveRoom={leaveRoom}
+        roomCode={roomCode}
         mode="chat"
       />
     </div>

@@ -1,12 +1,18 @@
 import "./MembersPanel.css";
 
-function MembersPanel({ members, user, leaveRoom, presence, mode }) {
+function MembersPanel({ members, user, leaveRoom, presence, mode, roomCode }) {
   return (
     <div
       className={
         mode === "editor" ? "members-panel editor" : "members-panel chat"
       }
     >
+      {/* ROOM CODE */}
+      <div className="room-code-section">
+        <div className="room-code-label">ROOM CODE</div>
+        <div className="room-code-value">{roomCode}</div>
+      </div>
+
       <div className="members-header">Members</div>
 
       <div className="member-list">

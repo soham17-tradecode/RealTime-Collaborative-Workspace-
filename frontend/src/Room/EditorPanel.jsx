@@ -334,6 +334,7 @@ function EditorPanel({
           user={user}
           leaveRoom={leaveRoom}
           mode="editor"
+          roomCode={roomCode}
         />
 
         {/* <div className="right-files">

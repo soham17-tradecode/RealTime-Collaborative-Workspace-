@@ -267,3 +267,22 @@
   font-size: 12px;
   color: #9ca3af;
 }
+.room-code-section {
+  padding: 16px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+
+.room-code-label {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.room-code-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
