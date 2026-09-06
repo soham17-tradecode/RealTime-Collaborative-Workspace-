@@ -32,7 +32,8 @@ services:
 
 
   backend:
-    build: .
+#    build: .
+    image: realtime-backend:latest
     container_name: spring_app
     restart: always
     depends_on:
