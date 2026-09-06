@@ -40,9 +40,11 @@ pipeline {
             }
         }
 
-        stage('Docker Check') {
+        stage('Docker Build') {
             steps {
-                bat 'docker version'
+                dir('Backend') {
+                    bat 'docker build -t realtime-backend:latest .'
+                }
             }
         }
     }
