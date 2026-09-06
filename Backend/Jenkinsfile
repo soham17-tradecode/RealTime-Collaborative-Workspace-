@@ -12,20 +12,23 @@ pipeline {
         stage('Build') {
             steps {
                 dir('Backend') {
-                    bat 'gradlew.bat clean build -x test'
+                    bat '''
+                        gradlew.bat clean build -x test
+                    '''
                 }
             }
         }
 
-       stage('Test') {
-           steps {
-               dir('Backend') {
-                   bat '''
-                       gradlew.bat test --stacktrace --info
-                   '''
-               }
-           }
-       }
+        stage('Test') {
+            steps {
+                dir('Backend') {
+                    bat '''
+                        gradlew.bat test --stacktrace --info
+                    '''
+                }
+            }
+        }
+    }
 
     post {
         success {
