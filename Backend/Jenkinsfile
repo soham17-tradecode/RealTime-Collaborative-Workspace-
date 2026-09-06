@@ -17,14 +17,15 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                dir('Backend') {
-                    bat 'gradlew.bat test'
-                }
-            }
-        }
-    }
+       stage('Test') {
+           steps {
+               dir('Backend') {
+                   bat '''
+                       gradlew.bat test --stacktrace --info
+                   '''
+               }
+           }
+       }
 
     post {
         success {
