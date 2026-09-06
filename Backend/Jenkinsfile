@@ -47,6 +47,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy') {
+            steps {
+                dir('Backend') {
+                    bat 'docker compose up -d'
+                }
+            }
+        }
     }
 
     post {
