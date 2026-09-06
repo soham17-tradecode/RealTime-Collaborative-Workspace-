@@ -51,30 +51,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('Backend') {
-                     bat 'docker compose --env-file C:\\ProgramData\\Jenkins\\realtime.env up -d'
+                    bat 'docker compose --env-file C:\\ProgramData\\Jenkins\\realtime.env up -d'
                 }
             }
         }
+
         stage('Health Check') {
             steps {
                 bat '''
-                    powershell -NoProfile -Command ^
-                    "$maxAttempts=12; ^
-                    for ($i=1; $i -le $maxAttempts; $i++) { ^
-                        try { ^
-                            $response=Invoke-RestMethod -Uri 'http://127.0.0.1:8080/actuator/health' -TimeoutSec 10; ^
-                            if ($response.status -eq 'UP') { ^
-                                Write-Host 'Application is healthy'; ^
-                                exit 0 ^
-                            } ^
-                            Write-Host 'Application is not healthy yet' ^
-                        } catch { ^
-                            Write-Host \"Waiting for application... attempt $i/$maxAttempts\" ^
-                        }; ^
-                        Start-Sleep -Seconds 5 ^
-                    }; ^
-                    Write-Host 'Application health check failed'; ^
-                    exit 1"
+                    powershell -NoProfile -Command "$maxAttempts=12; for ($i=1; $i -le $maxAttempts; $i++) { try { $response=Invoke-RestMethod -Uri 'http://127.0.0.1:8080/actuator/health' -TimeoutSec 10; if ($response.status -eq 'UP') { Write-Host 'Application is healthy'; exit 0 } Write-Host 'Application is not healthy yet' } catch { Write-Host ('Waiting for application... attempt ' + $i + '/' + $maxAttempts) }; Start-Sleep -Seconds 5 }; Write-Host 'Application health check failed'; exit 1"
                 '''
             }
         }
