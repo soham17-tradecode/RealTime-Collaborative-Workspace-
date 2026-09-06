@@ -59,7 +59,7 @@ pipeline {
         stage('Health Check') {
             steps {
                 bat '''
-                    powershell -NoProfile -Command "$maxAttempts=12; for ($i=1; $i -le $maxAttempts; $i++) { try { $result = curl.exe --noproxy '*' --silent --show-error --fail http://127.0.0.1:8080/actuator/health; Write-Host $result; if ($result -match '\"status\":\"UP\"') { Write-Host 'Application is healthy'; exit 0 } } catch { Write-Host ('Waiting for application... attempt ' + $i + '/' + $maxAttempts) }; Start-Sleep -Seconds 5 }; Write-Host 'Application health check failed'; exit 1"
+                    powershell -NoProfile -Command "$maxAttempts=16; for ($i=1; $i -le $maxAttempts; $i++) { try { $result = curl.exe --noproxy '*' --silent --show-error --fail http://127.0.0.1:8080/actuator/health; Write-Host $result; if ($result -match '\"status\":\"UP\"') { Write-Host 'Application is healthy'; exit 0 } } catch { Write-Host ('Waiting for application... attempt ' + $i + '/' + $maxAttempts) }; Start-Sleep -Seconds 5 }; Write-Host 'Application health check failed'; exit 1"
                 '''
             }
         }
