@@ -51,7 +51,7 @@ public class securityConfig {
                 )
                 .authorizeHttpRequests(auth -> auth
                         // Added "/logout" here so Spring Security doesn't intercept it maliciously
-                        .requestMatchers("/save", "/login","/ws/**","/refresh").permitAll()
+                        .requestMatchers("/save", "/login","/ws/**","/refresh","/actuator/health").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

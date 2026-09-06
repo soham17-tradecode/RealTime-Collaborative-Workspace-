@@ -53,7 +53,7 @@ public class jwtFilter extends OncePerRequestFilter {
 
         if (
                 path.equals("/refresh") ||
-                        path.equals("/login")
+                        path.equals("/login") || path.equals("/actuator/health")
         ) {
             filterChain.doFilter(request, response);
             return;
